@@ -2,9 +2,9 @@ package ru.gb.current;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-import ru.gb.prev.CartConfiguration;
+import ru.gb.prev.AppConfiguration;
 
 @Configuration
-@Import(CartConfiguration.class)
+@Import(AppConfiguration.class)
 public class RootWebApplicationConfig{
 }

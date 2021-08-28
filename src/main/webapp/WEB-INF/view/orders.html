@@ -1,0 +1,35 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Orders</title>
+</head>
+
+<body>
+<h1>Orders</h1>
+<div>
+    <a href="./">Return to main page</a><br>
+    <a href="orders/add">Add a new order</a><br>
+</div>
+<table cellspacing="2" border="1" cellpadding="5">
+    <thead>
+    <tr>
+        <th> Id </th>
+        <th> Date </th>
+        <th> Cost </th>
+        <th> Products </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="order : ${orders}">
+        <td><span th:text="${order.id}"> Id </span></td>
+        <td><span th:text="${order.date}"> Date </span></td>
+        <td><span th:text="${order.cost}"> Cost </span></td>
+        <td>
+            <ul th:each="product : ${order.products}">
+                <li th:text="${product.name}"></li>
+            </ul>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
