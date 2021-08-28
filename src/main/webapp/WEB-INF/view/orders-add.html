@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add a new product</title>
+</head>
+
+<body>
+    <form th:action="@{'/orders/add'}" method="post">
+        ID: <input type="text" name="id"/>
+        <br>
+        <table>
+            <tr>
+                <td>Add products to your order</td>
+                <td>
+                    <th:block th:each="product : ${products}">
+                        <input type="checkbox" name="products" th:value="${product.id}"/>
+                        <label th:text="${product.name}"></label>
+                    </th:block>
+                </td>
+            </tr>
+        </table>
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
